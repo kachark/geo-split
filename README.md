@@ -31,7 +31,7 @@ typically be rendered as follows, wrapping around the world:
 
 ### After
 `geo-split` can split the polygon and return consituent polygons which straddle the antimeridian.
-The resulting geometry is:
+The resulting geometry is now:
 
 ```
 {
@@ -49,10 +49,10 @@ The resulting geometry is:
       ],
       [
         [
-          [180, 6.857142857142858],
-          [182, 8],
-          [180, 7.777777777777778],
-          [180, 6.857142857142858],
+          [-180, 6.857142857142858],
+          [-178, 8],
+          [-180, 7.777777777777778],
+          [-180, 6.857142857142858],
         ],
       ],
     ],
