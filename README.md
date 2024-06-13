@@ -25,12 +25,12 @@ Consider the polygon which crosses the antimeridian:
 }
 ```
 
-Most GeoJSON renderers cannot distinguish the intent for this polygon to cross the antimeridian and will
-typically be rendered as follows, wrapping around the world:
+Most GeoJSON renderers cannot distinguish the user intent for this polygon - to cross the antimeridian or wrap
+around the world. Due to this, renderers will often opt to wrap the polygon:
 ![Before](https://github.com/kachark/geo-split/blob/main/static/polygon.png?raw=true)
 
 ### After
-`geo-split` can split the polygon and return consituent polygons which straddle the antimeridian.
+`geo-split` can split the polygon and return a set of constituent polygons which straddle the antimeridian.
 The resulting geometry is now:
 
 ```
