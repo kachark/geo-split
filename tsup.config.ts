@@ -27,4 +27,3 @@ export default [
     format: "esm",
   }),
 ];
-
