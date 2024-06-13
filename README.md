@@ -6,9 +6,9 @@ This includes handling for discontinuities at -180,180 degrees longitude.
 ![](https://github.com/kachark/geo-split/blob/main/static/polygon_split.png?raw=true)
 <!-- <img src="https://github.com/kachark/geo-split/blob/main/static/polygon_split.png" width="533" height="400"> -->
 
-Most GeoJSON renderers cannot distinguish the user intent for polygons with coordinates 
-that cross -180/180 degrees longitude. Due to this, renderers will often opt to wrap the polygon around the world,
-producing unintended visual artifacts. `geo-split` fixes this by splitting polygons around these discontinuities.
+Most GeoJSON renderers cannot distinguish the user intent for geometries with coordinates 
+that cross -180/180 degrees longitude. Due to this, renderers will often opt to wrap them around the world,
+producing unintended visual artifacts. `geo-split` fixes this by splitting geometries around these discontinuities.
 
 ## Installation
 ```
