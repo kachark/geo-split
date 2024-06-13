@@ -3,12 +3,22 @@
 `geo-split` is a small set of utilities to split GeoJSON geometries given in geographic coordinates.
 This includes handling for discontinuities at -180,180 degrees longitude.
 
+<img src="https://github.com/kachark/geo-split/blob/main/static/polygon_split.png" width="533" height="400">
+
+Most GeoJSON renderers cannot distinguish the user intent for polygons with coordinates 
+that cross -180/180 degrees longitude. Due to this, renderers will often opt to wrap the polygon around the world,
+producing unintended visual artifacts. `geo-split` fixes this by splitting polygons around these discontinuities.
+
+## Installation
+```
+npm i geo-split
+```
+
 ## Example
-### Before
 Consider the polygon which crosses the antimeridian:
 
 ```
-{
+const polygon = {
   geometry: {
     coordinates: [
       [
@@ -22,18 +32,14 @@ Consider the polygon which crosses the antimeridian:
     type: "Polygon"
   },
   type: "Feature"
-}
-```
-
-Most GeoJSON renderers cannot distinguish the user intent for this polygon - to cross the antimeridian or wrap
-around the world. Due to this, renderers will often opt to wrap the polygon:
-![Before](https://github.com/kachark/geo-split/blob/main/static/polygon.png?raw=true)
-
-### After
-`geo-split` can split the polygon and return a set of constituent polygons which straddle the antimeridian.
-The resulting geometry is now:
+};
 
 ```
+
+The split polygon now straddles the antimeridian:
+```
+const split = splitPolygonAntimeridian(polygon);
+
 {
   geometry: {
     coordinates: [
@@ -61,9 +67,6 @@ The resulting geometry is now:
   type: "Feature"
 }
 ```
-
-
-![After](https://github.com/kachark/geo-split/blob/main/static/split_polygon_antimeridian.png?raw=true)
 
 ## Dependencies
 * @turf/bbox-clip,
