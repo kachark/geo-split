@@ -1,6 +1,17 @@
 {
   "name": "geo-split",
   "version": "0.1.0",
+  "license": "MIT",
+  "author": "Koray Kachar",
+  "description": "Utilities to split GeoJSON geometries",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kachark/geo-split.git"
+  },
+  "homepage": "https://github.com/kachark/geo-split",
+  "bugs": {
+    "url": "https://github.com/kachark/geo-split/issues"
+  },
   "type": "module",
   "main": "dist/cjs/index.cjs",
   "module": "dist/esm/index.js",
