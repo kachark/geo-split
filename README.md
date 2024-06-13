@@ -3,7 +3,8 @@
 `geo-split` is a small set of utilities to split GeoJSON geometries given in geographic coordinates.
 This includes handling for discontinuities at -180,180 degrees longitude.
 
-<img src="https://github.com/kachark/geo-split/blob/main/static/polygon_split.png" width="533" height="400">
+![](https://github.com/kachark/geo-split/blob/main/static/polygon_split.png?raw=true)
+<!-- <img src="https://github.com/kachark/geo-split/blob/main/static/polygon_split.png" width="533" height="400"> -->
 
 Most GeoJSON renderers cannot distinguish the user intent for polygons with coordinates 
 that cross -180/180 degrees longitude. Due to this, renderers will often opt to wrap the polygon around the world,
